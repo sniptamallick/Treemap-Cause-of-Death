@@ -1,4 +1,4 @@
-#import packages 
+#import relevant packages 
 import pandas as pd
 import matplotlib 
 import matplotlib.pyplot as plt        
@@ -18,12 +18,12 @@ df.columns = df.columns.str.replace('Cause of death','Cause')
 
 #drop unnecessary rows and columns, specifically unnamed ones =
 #index refers to the row 
-df= df.drop( index= [12], columns= ['Unnamed: 0', 'Unnamed: 4', 'Unnamed: 3'])
+df= df.drop(index= [12], columns= ['Unnamed: 0', 'Unnamed: 4', 'Unnamed: 3'])
 
 #specify color 
 cmap = matplotlib.cm.coolwarm
 
-#specify minimum and maximum values and associate them with colors
+#specify minimum and maximum values 
 mini = min(df["Deaths"])
 maxi = max(df["Deaths"])
 norm = matplotlib.colors.Normalize(vmin=mini, vmax=maxi)
@@ -35,12 +35,14 @@ squarify.plot(sizes=df["Deaths"], label=df["Cause"], alpha = 1.0, color = colors
 #remove axes on graph 
 plt.axis('off')
 
-#adjust font sizes of labels
-plt.rc('font', size=6.5)         
-plt.rc('axes', labelsize=6.5)     
+#adjust font sizes 
+plt.rc('font', size= 6)         
+plt.rc('axes', labelsize= 6)     
+
 
 #insert graph title 
-plt. title("Causes of Death in 2016", fontsize = 12)
+plt.title("Causes of Death in 2016", fontsize= 12)
 
 #show graph 
 plt.show()
+
