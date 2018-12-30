@@ -16,8 +16,7 @@ df = df.sort_values(by="Deaths", ascending= False)
 #rename column 
 df.columns = df.columns.str.replace('Cause of death','Cause')
 
-#drop unnecessary rows and columns, specifically unnamed ones =
-#index refers to the row 
+#drop unnecessary rows and columns, specifically unnamed ones
 df= df.drop(index= [12], columns= ['Unnamed: 0', 'Unnamed: 4', 'Unnamed: 3'])
 
 #specify color 
